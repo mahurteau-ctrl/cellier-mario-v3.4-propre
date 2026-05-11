@@ -1,0 +1,144 @@
+<!-- TEST MARIO 123 -->
+ <!-- Version stable restaurée le 10 mai 2026 -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Cellier Mario‑Signature – Version 3.4</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>Cellier Mario‑Signature – Version 3.4</h1>
+
+<div class="panel">
+  <h3>Ajouter / modifier une bouteille</h3>
+
+  <div class="data-tools">
+    <button id="exportBtn">Exporter</button>
+    <input type="file" id="importFile" style="display:none">
+    <button id="importBtn">Importer</button>
+  </div>
+
+  <div class="row">
+    <div class="field">
+      <label>Millésime</label>
+      <input type="number" id="year">
+    </div>
+
+    <div class="field">
+      <label>Nom du vin</label>
+      <input type="text" id="name">
+    </div>
+
+    <div class="field">
+      <label>Région</label>
+      <input type="text" id="region">
+    </div>
+
+    <div class="field">
+      <label>Type</label>
+      <select id="type">
+        <option value="">—</option>
+        <option>Rouge</option>
+        <option>Blanc</option>
+        <option>Mousseux</option>
+        <option>Champagne</option>
+      </select>
+    </div>
+
+    <div class="field">
+      <label>Emplacement</label>
+      <select id="location">
+        <option value="">—</option>
+        <option>Haut rangée 1</option>
+        <option>Haut rangée 2</option>
+        <option>Bas rangée 1</option>
+        <option>Bas rangée 2</option>
+        <option>Bas rangée 3</option>
+        <option>Bas rangée 4</option>
+      </select>
+    </div>
+
+    <!-- NOUVEAUX CHAMPS -->
+    <div class="field">
+      <label>Prix payé ($)</label>
+      <input type="number" id="price" step="0.01">
+    </div>
+
+    <div class="field">
+      <label>Date d’achat</label>
+      <input type="date" id="purchaseDate">
+    </div>
+
+    <div class="field">
+      <label>Début fenêtre</label>
+      <input type="number" id="from">
+    </div>
+
+    <div class="field">
+      <label>Fin fenêtre</label>
+      <input type="number" id="to">
+    </div>
+
+    <div class="field">
+      <label>Consommé le</label>
+      <input type="date" id="consumed">
+    </div>
+
+    <div class="field">
+      <label>Photo</label>
+      <input type="file" id="photo" accept="image/*">
+    </div>
+  </div>
+
+  <div class="row" style="margin-top:10px;">
+    <div class="field" style="flex:1 1 100%;">
+      <label>Notes</label>
+      <textarea id="notes"></textarea>
+    </div>
+  </div>
+
+  <div style="margin-top:10px; display:flex; gap:10px; align-items:center;">
+    <button class="btn-primary" id="saveBtn">Enregistrer la bouteille</button>
+    <button class="btn-secondary" id="resetBtn">Réinitialiser</button>
+    <span id="formStatus" style="font-size:12px; color:#555;"></span>
+  </div>
+</div>
+
+<div class="panel">
+  <h3>Cellier</h3>
+  <div class="filters">
+    <button data-mode="all" class="active">Tous</button>
+    <button data-mode="now">Prêt</button>
+    <button data-mode="later">À garder</button>
+    <button data-mode="late">Tardif</button>
+    <button data-mode="unknown">Inconnu</button>
+  </div>
+
+  <table id="wineTable">
+    <thead>
+      <tr>
+        <th>Millésime</th>
+        <th>Vin</th>
+        <th>Type</th>
+        <th>Emplacement</th>
+        <th>Région</th>
+        <th>Prix</th>
+        <th>Achat le</th>
+        <th>Fenêtre</th>
+        <th>Statut</th>
+        <th>Timeline</th>
+        <th>Consommé le</th>
+        <th>Notes</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
