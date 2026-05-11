@@ -74,7 +74,7 @@ function render() {
   const tbody = document.querySelector("#wineTable tbody");
   tbody.innerHTML = "";
 
-  wines.forEach(w => {
+  for (const w of wines) {
     const st = getStatus(w);
 
     if (!matchMode(st.code)) continue;
@@ -103,7 +103,7 @@ function render() {
       </td>
     `;
     tbody.appendChild(tr);
-  });
+  }
 }
 
 /* -------------------- FORMULAIRE -------------------- */
